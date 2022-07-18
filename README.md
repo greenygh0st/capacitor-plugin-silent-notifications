@@ -1,6 +1,6 @@
 # capacitor-plugin-silent-notifications
 
-Allows an a Capacitor application to handle iOS remote/silent push notifications
+Allows a Capacitor application to handle iOS remote/silent push notifications.
 
 ## Install
 
