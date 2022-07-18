@@ -4,7 +4,7 @@ export interface CapacitorSilentNotificationsPlugin {
   // echo(options: { value: string }): Promise<{ value: string }>;
   /**
    * Listens to events associated with Silent Notifications
-   * and notifies the listenerFunc if a Shortcuts has been executed.
+   * and notifies the listenerFunc if a background notification has been received.
    *
    * @since 1.0.0
    *

@@ -52,7 +52,7 @@ addListener(eventName: 'silentNotificationReceived', listenerFunc: (options: Opt
 ```
 
 Listens to events associated with Silent Notifications
-and notifies the listenerFunc if a Shortcuts has been executed.
+and notifies the listenerFunc if a background notification has been received.
 
 | Param              | Type                                                              | Description                                     |
 | ------------------ | ----------------------------------------------------------------- | ----------------------------------------------- |
