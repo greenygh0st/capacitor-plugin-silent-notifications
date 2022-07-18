@@ -85,6 +85,8 @@ Remove all listeners for this plugin.
 markCompleted() => Promise<any>
 ```
 
+Not currently in use.
+
 **Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------

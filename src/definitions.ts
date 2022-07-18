@@ -24,7 +24,7 @@ export interface CapacitorSilentNotificationsPlugin {
    removeAllListeners(): Promise<void>;
 
    /**
-    * 
+    * Not currently in use.
     */
    markCompleted(): Promise<any>;
 }
