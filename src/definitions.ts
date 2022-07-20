@@ -31,10 +31,7 @@ export interface CapacitorSilentNotificationsPlugin {
 
 export interface Options {
   /**
-   * Provide a key-value object that contains information about
-   * the shortcut, this will be returned in the getActivatedShortcut
-   * method. It is not possible to use the persistentIdentifier key,
-   * it is used internally
+   * Provide a key-value object that contains information sent with the remote notification.
    */
   userInfo?: any;
 

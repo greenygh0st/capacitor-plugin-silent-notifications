@@ -113,9 +113,9 @@ Remove all listeners for this plugin.
 
 #### Options
 
-| Prop           | Type             | Description                                                                                                                                                                                                      |
-| -------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`userInfo`** | <code>any</code> | Provide a key-value object that contains information about the shortcut, this will be returned in the getActivatedShortcut method. It is not possible to use the persistentIdentifier key, it is used internally |
-| **`object`**   | <code>any</code> | Return the object sent with the data                                                                                                                                                                             |
+| Prop           | Type             | Description                                                                             |
+| -------------- | ---------------- | --------------------------------------------------------------------------------------- |
+| **`userInfo`** | <code>any</code> | Provide a key-value object that contains information sent with the remote notification. |
+| **`object`**   | <code>any</code> | Return the object sent with the data                                                    |
 
 </docgen-api>
