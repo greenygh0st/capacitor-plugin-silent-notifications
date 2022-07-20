@@ -48,9 +48,9 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
 ```typescript
 import { CapacitorSilentNotifications } from 'capacitor-plugin-silent-notifications'
 
-CapacitorSilentNotifications.addListener('silentNotificationReceived', async (result) => {
-    // do something with the response of the shortcut here
-    console.log('silentNotificationReceived', result);
+CapacitorSilentNotifications.addListener('silentNotificationReceived', async (payload) => {
+    // do something with the notification payload here
+    console.log('silentNotificationReceived', payload);
 }
 ```
 
