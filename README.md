@@ -4,6 +4,7 @@ Allows a Capacitor application to handle iOS remote/silent push notifications.
 
 ## Prerequisites
 - Must be using iOS 13 or later
+- Your app must be setup to receive push notifications (you need the device token)
 
 ## Install
 
