@@ -12,5 +12,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm run build
-      - run: npm run verify
+
+      # Install required packages
+      - name: Install packages
+        run: npm i
+      
+      # Run the build script
+      - name: Build
+        run: npm run build
+      # run the verify script
+      - name: Verify
+        run: npm run verify
