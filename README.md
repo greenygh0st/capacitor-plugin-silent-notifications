@@ -21,9 +21,6 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
     // Perform background operation, need to create a plugin
     NotificationCenter.default.post(name: Notification.Name(rawValue: "silentNotificationReceived"), object: nil, userInfo: userInfo)
 
-    // Perform background operation, need to create a plugin
-    NotificationCenter.default.post(name: Notification.Name(rawValue: "silentNotificationReceived"), object: nil, userInfo: nil)
-
     // Give the listener a few seconds to complete, system allows for 30 - we give 25. The system will kill this after 30 seconds.
     DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
         // Execute after 25 seconds
