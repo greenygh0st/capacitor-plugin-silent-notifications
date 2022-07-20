@@ -1,13 +1,56 @@
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Camera } from '@capacitor/camera';
+import { CapacitorSilentNotifications } from 'capacitor-plugin-silent-notifications';
+import { PushNotifications } from '@capacitor/push-notifications';
 
 window.customElements.define(
   'capacitor-welcome',
   class extends HTMLElement {
+    addPushListeners = async () => {
+      await PushNotifications.addListener('registration', token => {
+        console.info('Registration token: ', token.value);
+      });
+    
+      await PushNotifications.addListener('registrationError', err => {
+        console.error('Registration error: ', err.error);
+      });
+    
+      await PushNotifications.addListener('pushNotificationReceived', notification => {
+        console.log('Push notification received: ', notification);
+      });
+    
+      await PushNotifications.addListener('pushNotificationActionPerformed', notification => {
+        console.log('Push notification action performed', notification.actionId, notification.inputValue);
+      });
+    }
+
+    registerNotifications = async () => {
+      let permStatus = await PushNotifications.checkPermissions();
+    
+      if (permStatus.receive === 'prompt') {
+        permStatus = await PushNotifications.requestPermissions();
+      }
+    
+      if (permStatus.receive !== 'granted') {
+        throw new Error('User denied permissions!');
+      }
+    
+      await PushNotifications.register();
+    }
+
     constructor() {
       super();
 
       SplashScreen.hide();
+
+      this.addPushListeners();
+
+      this.registerNotifications();
+
+      CapacitorSilentNotifications.addListener('silentNotificationReceived', async (result) => {
+        // do something with the response of the shortcut here
+        console.log('silentNotificationReceived', result);
+      });
 
       const root = this.attachShadow({ mode: 'open' });
 

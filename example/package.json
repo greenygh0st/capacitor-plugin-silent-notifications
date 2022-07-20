@@ -13,8 +13,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@capacitor/core": "latest",
     "@capacitor/camera": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "^3.6.0",
+    "@capacitor/push-notifications": "^1.0.9",
     "@capacitor/splash-screen": "latest",
     "capacitor-plugin-silent-notifications": "file:.."
   },

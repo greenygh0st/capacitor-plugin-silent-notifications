@@ -2,6 +2,9 @@
 
 Allows a Capacitor application to handle iOS remote/silent push notifications.
 
+## Prerequisites
+- Must be using iOS 13 or later
+
 ## Install
 
 ```bash
@@ -11,23 +14,46 @@ npx cap sync
 
 ## Add to AppDelete.swift
 ```swift
-func application(_ application: UIApplication,
-                  didReceiveRemoteNotification userInfo: [AnyHashable : Any],
-                  fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    // debug
+    print("Received by: didReceiveRemoteNotification w/ fetchCompletionHandler")
+
     // Perform background operation, need to create a plugin
     NotificationCenter.default.post(name: Notification.Name(rawValue: "silentNotificationReceived"), object: nil, userInfo: userInfo)
-    
+
+    // Perform background operation, need to create a plugin
+    NotificationCenter.default.post(name: Notification.Name(rawValue: "silentNotificationReceived"), object: nil, userInfo: nil)
+
     // Give the listener a few seconds to complete, system allows for 30 - we give 25. The system will kill this after 30 seconds.
-    let currentDate = Date()
-    let finishDateTime = Calendar.current.date(byAdding: .second, value: 25, to: currentDate)!
-    let seconds = abs(Date().timeIntervalSince(finishDateTime))
+    DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+        // Execute after 25 seconds
+        completionHandler(.newData)
+    }
+}
+
+// we just add this to deal with an iOS simulator bug, this method is deprecated as of iOS 13
+func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    // debug
+    print("Received by: performFetchWithCompletionHandler")
     
-    // do the sleep
-    sleep(UInt32(seconds))
-    
-    // Inform the system after the background operation is completed.
-    completionHandler(.newData)
+    // Perform background operation, need to create a plugin
+    NotificationCenter.default.post(name: Notification.Name(rawValue: "silentNotificationReceived"), object: nil, userInfo: nil)
+
+    // Give the listener a few seconds to complete, system allows for 30 - we give 25. The system will kill this after 30 seconds.
+    DispatchQueue.main.asyncAfter(deadline: .now() + 25) {
+        // Execute after 25 seconds
+        completionHandler(.newData)
+    }
+}
+```
+
+## Add the listener to your Capactior app
+```typescript
+import { CapacitorSilentNotifications } from 'capacitor-plugin-silent-notifications'
+
+CapacitorSilentNotifications.addListener('silentNotificationReceived', async (result) => {
+    // do something with the response of the shortcut here
+    console.log('silentNotificationReceived', result);
 }
 ```
 

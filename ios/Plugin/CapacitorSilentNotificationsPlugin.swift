@@ -11,11 +11,11 @@ public class CapacitorSilentNotificationsPlugin: CAPPlugin {
 
     public override func load() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.onOpenAppByUserActivity(notification:)),
+                                               selector: #selector(self.onBackgoundNotification(notification:)),
                                                name: NSNotification.Name("silentNotificationReceived"), object: nil)
     }
 
-    @objc public func onOpenAppByUserActivity(notification: Notification) {
+    @objc public func onBackgoundNotification(notification: Notification) {
         debugPrint(notification)
         self.notifyListeners("silentNotificationReceived", data: notification.userInfo as? [String : Any] ?? ["something": "happened"], retainUntilConsumed: true)
     }

@@ -1,0 +1,9 @@
+{ 
+  "Simulator Target Bundle": "com.cap-silent-notifications.example",
+  "aps": {
+    "content-available" : 1,
+    "apns-push-type": "background"
+  },
+  "acme1" : "bar",
+  "acme2" : 42
+}

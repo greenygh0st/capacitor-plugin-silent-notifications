@@ -1,0 +1,8 @@
+{ 
+  "Simulator Target Bundle": "com.cap-silent-notifications.example",
+  "aps" : {
+    "alert" : "Hello World!"
+  },
+  "acme1" : "bar",
+  "acme2" : 42
+}
