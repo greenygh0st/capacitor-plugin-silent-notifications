@@ -26,7 +26,7 @@ export interface CapacitorSilentNotificationsPlugin {
    /**
     * Not currently in use.
     */
-   markCompleted(): Promise<any>;
+  //  markCompleted(): Promise<any>;
 }
 
 export interface Options {

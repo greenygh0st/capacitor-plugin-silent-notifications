@@ -44,7 +44,7 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
 }
 ```
 
-## Add the listener to your Capactior app
+## Add the listener to your Capacitor app
 ```typescript
 import { CapacitorSilentNotifications } from 'capacitor-plugin-silent-notifications'
 
@@ -60,7 +60,6 @@ CapacitorSilentNotifications.addListener('silentNotificationReceived', async (re
 
 * [`addListener('silentNotificationReceived', ...)`](#addlistenersilentnotificationreceived)
 * [`removeAllListeners()`](#removealllisteners)
-* [`markCompleted()`](#markcompleted)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -98,19 +97,6 @@ removeAllListeners() => Promise<void>
 Remove all listeners for this plugin.
 
 **Since:** 1.0.0
-
---------------------
-
-
-### markCompleted()
-
-```typescript
-markCompleted() => Promise<any>
-```
-
-Not currently in use.
-
-**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
