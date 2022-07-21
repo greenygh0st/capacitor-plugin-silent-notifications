@@ -53,7 +53,7 @@ import { CapacitorSilentNotifications } from 'capacitor-plugin-silent-notificati
 CapacitorSilentNotifications.addListener('silentNotificationReceived', async (payload) => {
     // do something with the notification payload here
     console.log('silentNotificationReceived', payload);
-}
+});
 ```
 
 ## API
