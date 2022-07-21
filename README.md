@@ -7,6 +7,7 @@ Allows a Capacitor application to handle iOS remote/silent push notifications.
 - Your app must be setup to receive push notifications (you need the device token)
 
 ## Install
+[npm link](https://www.npmjs.com/package/capacitor-plugin-silent-notifications)
 
 ```bash
 npm install capacitor-plugin-silent-notifications
