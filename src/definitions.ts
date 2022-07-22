@@ -13,7 +13,7 @@ export interface CapacitorSilentNotificationsPlugin {
    */
    addListener(
     eventName: 'silentNotificationReceived',
-    listenerFunc: (options: Options) => void,
+    listenerFunc: (payload: any) => void,
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**

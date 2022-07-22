@@ -72,16 +72,16 @@ CapacitorSilentNotifications.addListener('silentNotificationReceived', async (pa
 ### addListener('silentNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'silentNotificationReceived', listenerFunc: (options: Options) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: 'silentNotificationReceived', listenerFunc: (payload: any) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listens to events associated with Silent Notifications
 and notifies the listenerFunc if a background notification has been received.
 
-| Param              | Type                                                              | Description                                     |
-| ------------------ | ----------------------------------------------------------------- | ----------------------------------------------- |
-| **`eventName`**    | <code>'silentNotificationReceived'</code>                         | Name of the event                               |
-| **`listenerFunc`** | <code>(options: <a href="#options">Options</a>) =&gt; void</code> | Function to execute when listener gets notified |
+| Param              | Type                                      | Description                                     |
+| ------------------ | ----------------------------------------- | ----------------------------------------------- |
+| **`eventName`**    | <code>'silentNotificationReceived'</code> | Name of the event                               |
+| **`listenerFunc`** | <code>(payload: any) =&gt; void</code>    | Function to execute when listener gets notified |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -111,13 +111,5 @@ Remove all listeners for this plugin.
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
-
-
-#### Options
-
-| Prop           | Type             | Description                                                                             |
-| -------------- | ---------------- | --------------------------------------------------------------------------------------- |
-| **`userInfo`** | <code>any</code> | Provide a key-value object that contains information sent with the remote notification. |
-| **`object`**   | <code>any</code> | Return the object sent with the data                                                    |
 
 </docgen-api>
