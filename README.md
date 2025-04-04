@@ -60,7 +60,7 @@ CapacitorSilentNotifications.addListener('silentNotificationReceived', async (pa
 
 <docgen-index>
 
-* [`addListener('silentNotificationReceived', ...)`](#addlistenersilentnotificationreceived)
+* [`addListener('silentNotificationReceived', ...)`](#addlistenersilentnotificationreceived-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
