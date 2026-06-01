@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-silent-notifications",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Allows an a Capacitor application to handle iOS remote/silent push notifications",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
